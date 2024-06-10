@@ -1,0 +1,207 @@
+{
+  "component-definition": {
+    "uuid": "f657d899-8598-4b8f-8ddf-685266acbbe1",
+    "metadata": {
+      "title": "Component definition for AI RMF",
+      "last-modified": "2024-06-10T10:20:55+00:00",
+      "version": "develop",
+      "oscal-version": "1.1.2"
+    },
+    "components": [
+      {
+        "uuid": "cd24943e-a85c-49db-afee-2439b7ec9961",
+        "type": "service",
+        "title": "model-mesh",
+        "description": "Model serving and monitoring",
+        "props": [
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "model_bias_score_threshold",
+            "remarks": "rule_set_0"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure that model output has bias score of less than a threshold of 20%",
+            "remarks": "rule_set_0"
+          },
+          {
+            "name": "Parameter_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "bias_score_max",
+            "remarks": "rule_set_0"
+          },
+          {
+            "name": "Parameter_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Max. bias score",
+            "remarks": "rule_set_0"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "model_harmful_content_score_threshold",
+            "remarks": "rule_set_1"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure that model output has harmful content score of less than a threshold of 10%",
+            "remarks": "rule_set_1"
+          },
+          {
+            "name": "Parameter_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "harmful_score_max",
+            "remarks": "rule_set_1"
+          },
+          {
+            "name": "Parameter_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Max. harmful content score",
+            "remarks": "rule_set_1"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "model_misinformation_score_threshold",
+            "remarks": "rule_set_2"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure that model output has misinformation score of less than a threshold of 10%",
+            "remarks": "rule_set_2"
+          },
+          {
+            "name": "Parameter_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "misinformation_score_max",
+            "remarks": "rule_set_2"
+          },
+          {
+            "name": "Parameter_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Max. misinformation score",
+            "remarks": "rule_set_2"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "18bfefb3-a94c-42e6-b1c3-2ce71e6403e6",
+            "source": "catalogs/AI_RMF/catalog.json",
+            "description": "AI RMF Controls",
+            "set-parameters": [
+              {
+                "param-id": "bias_score_max",
+                "values": [
+                  "20"
+                ]
+              },
+              {
+                "param-id": "harmful_score_max",
+                "values": [
+                  "10"
+                ]
+              },
+              {
+                "param-id": "misinformation_score_max",
+                "values": [
+                  "10"
+                ]
+              }
+            ],
+            "implemented-requirements": [
+              {
+                "uuid": "567c6996-2759-4ecc-8d84-f24ed95fe1a3",
+                "control-id": "MG-2.2-005",
+                "description": "",
+                "props": [
+                  {
+                    "name": "Rule_Id",
+                    "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+                    "value": "model_bias_score_threshold"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+                    "value": "model_harmful_content_score_threshold"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+                    "value": "model_misinformation_score_threshold"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "be0f918e-7d54-4c7f-aff2-2b1dec17b993",
+        "type": "Validation",
+        "title": "Ansible",
+        "description": "Ansible",
+        "props": [
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "model_bias_score_threshold",
+            "remarks": "rule_set_3"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "check_model_bias",
+            "remarks": "rule_set_3"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check that model output has bias score of less than a threshold of 20%",
+            "remarks": "rule_set_3"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "model_harmful_content_score_threshold",
+            "remarks": "rule_set_4"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "check_model_harmful_content",
+            "remarks": "rule_set_4"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check that model output has harmful content score of less than a threshold of 10%",
+            "remarks": "rule_set_4"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "model_misinformation_score_threshold",
+            "remarks": "rule_set_5"
+          },
+          {
+            "name": "Check_Id",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "check_model_misinformation",
+            "remarks": "rule_set_5"
+          },
+          {
+            "name": "Check_Description",
+            "ns": "http://ibm.github.io/compliance-trestle/schemas/oscal/cd",
+            "value": "Check that model output has misinformation score of less than a threshold of 10%",
+            "remarks": "rule_set_5"
+          }
+        ],
+        "control-implementations": []
+      }
+    ]
+  }
+}

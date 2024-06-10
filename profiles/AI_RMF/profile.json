@@ -1,0 +1,20 @@
+{
+    "profile": {
+      "uuid": "4dd1e5a9-829d-43c9-b6c7-89631fc202c2",
+      "metadata": {
+        "title": "AI RMF Profile",
+        "last-modified": "2024-06-10T17:57:22.102725+00:00",
+        "version": "1.0.0",
+        "oscal-version": "1.1.2"
+      },
+      "imports": [
+        {
+          "href": "trestle://catalogs/AI_RMF/catalog.json",
+          "include-all": {}
+        }
+      ],
+      "merge": {
+        "as-is": true
+      }
+    }
+}
